@@ -11,7 +11,9 @@ import {
     ScrollView,
     Linking
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@exponent/vector-icons';
+const Icon = Ionicons;
 const {ToolbarAndroid} = Icon;
 import { Navigation } from 'react-native-navigation';
 

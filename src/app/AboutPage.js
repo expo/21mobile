@@ -11,7 +11,10 @@ import {
     ScrollView,
     Linking
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@exponent/vector-icons';
+const Icon = Ionicons;
+
 import {iconsMap} from '../utils/AppIcons';
 
 class AboutPage extends Component {

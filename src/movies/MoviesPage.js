@@ -10,7 +10,9 @@ import {
     ScrollView,
     Platform
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@exponent/vector-icons';
+const Icon = Ionicons;
 // const {ToolbarAndroid} = Icon;
 import Swiper from 'react-native-swiper';
 var wHeight = Dimensions.get('window').height;
@@ -131,11 +133,11 @@ class MoviesPage extends Component {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.content}>
-                        
+
                         <View style={this.getTabContentStyle('nowPlaying')}>
                             {movies.nowPlaying.length > 0 ?
-                                <Swiper 
-                                    style={styles.wrapper} 
+                                <Swiper
+                                    style={styles.wrapper}
                                     showsButtons={false}
                                     height={contentHeight}
                                     dot={<View style={{backgroundColor:'rgba(255,255,255,.3)', width: 10, height: 10, borderRadius: 5, marginLeft: 3, marginRight: 3,}} />}
@@ -154,8 +156,8 @@ class MoviesPage extends Component {
 
                         <View style={this.getTabContentStyle('comingSoon')}>
                             {movies.comingSoon.length > 0 ?
-                                <Swiper 
-                                    style={styles.wrapper} 
+                                <Swiper
+                                    style={styles.wrapper}
                                     showsButtons={false}
                                     height={contentHeight}
                                     dot={<View style={{backgroundColor:'rgba(255,255,255,.3)', width: 10, height: 10, borderRadius: 5, marginLeft: 3, marginRight: 3,}} />}
@@ -226,7 +228,7 @@ const styles = StyleSheet.create({
     wrapper: {
     },
     tabContent: {
-        
+
     },
     tabContentInactive: {
         position: 'absolute',

@@ -9,7 +9,9 @@ import {
     TextInput,
     Platform
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@exponent/vector-icons';
+const Icon = Ionicons;
 const {ToolbarAndroid} = Icon;
 import Swiper from 'react-native-swiper';
 var wHeight = Dimensions.get('window').height;
@@ -45,11 +47,11 @@ class CinemaSearchPage extends Component {
     changeSearchText(text) {
         this.setState({search: text}, () => {
             var {cities} = this.props.cinema;
-            
+
             var cinemas = cities.reduce((prev, current) => [...prev, ...current.theaters], []);
             if (this.state.search.length < 3) {
                 this.setState({searchResult: []});
-                return 
+                return
             }
 
             text = text.toLowerCase();
@@ -58,7 +60,7 @@ class CinemaSearchPage extends Component {
                 if (cinema.city.toLowerCase().indexOf(text) !== -1) return true;
                 return false;
             });
-            
+
             this.setState({searchResult: cinemas});
         });
     }
@@ -87,10 +89,10 @@ class CinemaSearchPage extends Component {
                         />
                 </View>
                 <View style={styles.content}>
-                    
+
                     {result.length > 0 ?
-                        <Swiper 
-                            style={styles.wrapper} 
+                        <Swiper
+                            style={styles.wrapper}
                             showsButtons={false}
                             height={contentHeight}
                             dot={<View style={{backgroundColor:'rgba(255,255,255,.3)', width: 10, height: 10, borderRadius: 5, marginLeft: 3, marginRight: 3,}} />}
@@ -157,7 +159,7 @@ const styles = StyleSheet.create({
     wrapper: {
     },
     tabContent: {
-        
+
     },
     tabContentInactive: {
         position: 'absolute',

@@ -1,4 +1,6 @@
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@exponent/vector-icons';
+const Icon = Ionicons;
 
 const icons = {
     "md-videocam": [30, "#fff"],
@@ -12,13 +14,15 @@ const icons = {
 var iconsMap = {};
 var iconsLoaded = () => {
     return new Promise((resolve, reject) => {
-        new Promise.all(
+        new Promise.all([]
+          /*
             Object.keys(icons).map(iconName =>
                 Ionicons.getImageSource(
                     iconName,
                     icons[iconName][0],
                     icons[iconName][1]
                 ))
+                */
         ).then(sources => {
             Object.keys(icons)
                 .forEach((iconName, idx) => iconsMap[iconName] = sources[idx])

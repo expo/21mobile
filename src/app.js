@@ -40,7 +40,7 @@ class App {
             tabs: [
                 {
                     label: 'Movies',
-                    screen: 'mobile21.MoviesPage',
+                    screen: 'main',
                     icon: iconsMap['md-videocam'],
                     selectedIcon: iconsMap['md-videocam'],
                     title: '21MOBILE',

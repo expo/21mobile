@@ -12,7 +12,8 @@ import AboutPage from './app/AboutPage';
 
 // register all screens of the app (including internal ones)
 export function registerScreens(store, Provider) {
-  Navigation.registerComponent('mobile21.MoviesPage', () => MoviesPage, store, Provider);
+  Navigation.registerComponent('main', () => MoviesPage, store, Provider);
+  // Navigation.registerComponent('mobile21.MoviesPage', () => MoviesPage, store, Provider);
   Navigation.registerComponent('mobile21.CinemasPage', () => CinemasPage, store, Provider);
   Navigation.registerComponent('mobile21.SchedulePage', () => SchedulePage, store, Provider);
   // Navigation.registerComponent('mobile21.WishlistPage', () => WishlistPage, store, Provider);

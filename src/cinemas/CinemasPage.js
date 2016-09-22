@@ -11,7 +11,9 @@ import {
     Platform
 } from 'react-native';
 const Item = Picker.Item;
-import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@exponent/vector-icons';
+const Icon = Ionicons;
 import Toolbar from '../app/Toolbar';
 import Swiper from 'react-native-swiper';
 var wHeight = Dimensions.get('window').height;
@@ -111,10 +113,10 @@ class CinemasPage extends Component {
                         </Picker>
                     </View>
                     <View style={styles.content}>
-                        
+
                         {city.theaters && city.theaters.length > 0 ?
-                            <Swiper 
-                                style={styles.wrapper} 
+                            <Swiper
+                                style={styles.wrapper}
                                 showsButtons={false}
                                 height={contentHeight}
                                 dot={<View style={{backgroundColor:'rgba(255,255,255,.3)', width: 10, height: 10, borderRadius: 5, marginLeft: 3, marginRight: 3,}} />}
@@ -182,7 +184,7 @@ const styles = StyleSheet.create({
     wrapper: {
     },
     tabContent: {
-        
+
     },
     tabContentInactive: {
         position: 'absolute',

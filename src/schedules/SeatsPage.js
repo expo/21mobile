@@ -9,7 +9,9 @@ import {
     Dimensions,
     ActivityIndicator,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@exponent/vector-icons';
+const Icon = Ionicons;
 const {ToolbarAndroid} = Icon;
 import { connect } from 'react-redux';
 import * as scheduleActions from '../schedules/ScheduleActions';
@@ -47,7 +49,7 @@ class SeatsPage extends Component {
     componentDidMount() {
         var {cinema} = this.props.cinema;
         var {activeMovie} = this.props.movie;
-        var {format, time, seats, date} = this.props.schedule; 
+        var {format, time, seats, date} = this.props.schedule;
         this.props.dispatch(scheduleActions.getSeatsStart(cinema.id, this.formatDate(date), activeMovie.id, format.format, time.time));
     }
     onMovieClick() {
@@ -65,7 +67,7 @@ class SeatsPage extends Component {
             return [styles.boxWrapper, {width: wWidth - 20, height: seats.length * 35}];
         } else {
             return styles.boxWrapper;
-        }   
+        }
     }
     getBoxHorizontalStyle() {
         var {seats} = this.props.schedule;
@@ -73,7 +75,7 @@ class SeatsPage extends Component {
             return [styles.boxWrapper, {width: seats[0].length * 28, height: seats.length * 35}];
         } else {
             return styles.boxWrapper;
-        }   
+        }
     }
     getBoxCardStyle(col) {
         var {seatSelected} = this.props.schedule;
@@ -98,7 +100,7 @@ class SeatsPage extends Component {
     render() {
         var {cinema} = this.props.cinema;
         var {activeMovie} = this.props.movie;
-        var {format, time, seats, seatsLoaded} = this.props.schedule; 
+        var {format, time, seats, seatsLoaded} = this.props.schedule;
         return (
             <View style={styles.container}>
                 <ScrollView>
@@ -145,7 +147,7 @@ class SeatsPage extends Component {
                                                         : null}
                                                 </View>
                                             </ScrollView>
-                                            : 
+                                            :
                                             <ActivityIndicator animating={true} size="large"/>}
                                     </View>
                                 </View>
